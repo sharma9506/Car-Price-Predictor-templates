@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Car Price Pediction</title>
+</head>
+<body>
+        <form action="{{ url_for('predict')}}" method="post">
+        <h1>What is the present price of your car ?</h1>
+        <input name="Present_Price" required="required" class="in">
+        <br>
+
+        <h1>How many kms have you driven ?</h1>
+        <input name="Kms_Driven" required="required" class="in">
+
+         <h1>How many previous owners did it pass through ? (0,1 ot 3)</h1>
+         <input name="Owner" required="required"class="in">
+
+          <h1>Year of purchase?</h1>
+           <input name="Year" required="required"class="in">
+
+           <h1>What is the fuel type</h1>
+           <select name="Fuel_Type_Petrol" required="required">
+               <option value="Petrol">Petrol</option>
+                <option value="Diesel">Diesel</option>
+                <option value="Diesel">CNG</option>
+           </select>
+
+           <h1>Car Mileage</h1>
+           <input name="Mileage" required="required"class="in">
+
+
+           <h1>Transmission type</h1>
+           <select name="Transmission_Mannual" required="required">
+                <option value="Mannual">Manual Car</option>
+                <option value="Automatic">Automatic Car</option>
+            </select>
+            <br><br><button id="sub" type="submit ">Calculate the Selling Price</button>
+            <br>
+            </form>
+
+
+              <br><br><h3>{{ prediction_text }}<h3>
+
+
+            <style>
+            
+			body {
+				background-color: #212529;
+				color: skyblue;
+				text-align: center;
+				padding: 0px;
+				margin: 0;
+            }
+
+            .in{
+				border-radius: 14px;
+				height: 25px;
+				font-size: 20px;
+				text-align: center;
+            }
+
+			button{
+				border-radius: 35px;
+				padding: 10px;
+				font-size: 20px;
+				border-width: 0;
+				background-color: springgreen;
+			}
+            </style>
+
+</body>
+</html>
